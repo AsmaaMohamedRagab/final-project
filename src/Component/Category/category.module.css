@@ -1,0 +1,21 @@
+.cat{
+    height: 350px;
+    width: 100%;
+}
+.content{
+    border: 1px solid lightgray;
+    cursor: pointer;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+.content:hover{
+    box-shadow:1px 1px 10px lightgreen;
+}

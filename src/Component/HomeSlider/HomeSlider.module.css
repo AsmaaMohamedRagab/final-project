@@ -1,0 +1,9 @@
+.height{
+    height: 400px;
+    width: 100%;
+}
+.blog{
+    height: 200px;
+    width: 100%;
+    display: block;
+}
