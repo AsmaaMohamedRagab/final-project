@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useContext, useState } from "react";
 import toast from "react-hot-toast";
-import { cartContext } from "../CartContext/CartContext.JSX";
+import { cartContext } from "../CartContext/CartContext.jsx";
 import { useNavigate } from "react-router-dom";
 
 export default function Payment() {

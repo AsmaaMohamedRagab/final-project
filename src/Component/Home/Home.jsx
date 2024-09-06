@@ -5,7 +5,7 @@ import { date } from "yup"
 import HomeSlider from "../HomeSlider/HomeSlider"
 import CategorySlider from "../CategorySlider/CategorySlider"
 import { Link } from "react-router-dom"
-import { cartContext } from "../CartContext/CartContext.JSX"
+import { cartContext } from "../CartContext/CartContext.jsx"
 import toast from "react-hot-toast"
 import { washlistcontext } from "../washlistcontext/WashlistContext.jsx"
 export default function Home() {

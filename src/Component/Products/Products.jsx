@@ -2,7 +2,7 @@ import axios from "axios"
 import { useContext, useEffect, useState } from "react"
 import { useQuery } from "react-query"
 import { Link } from "react-router-dom"
-import { cartContext } from "../CartContext/CartContext.JSX"
+import { cartContext } from "../CartContext/CartContext.jsx"
 import toast from "react-hot-toast"
 import { washlistcontext } from "../washlistcontext/WashlistContext.jsx"
 export default function Products() {

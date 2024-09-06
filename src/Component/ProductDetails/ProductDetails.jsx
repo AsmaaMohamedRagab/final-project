@@ -3,7 +3,7 @@ import style from "./ProductDetails.module.css"
 import { useQuery } from "react-query"
 import axios from "axios"
 import { useContext, useState } from "react"
-import { cartContext } from "../CartContext/CartContext.JSX"
+import { cartContext } from "../CartContext/CartContext.jsx"
 import toast from "react-hot-toast"
 export default function ProductDetails() {
     const [loader, setloader] = useState(false)

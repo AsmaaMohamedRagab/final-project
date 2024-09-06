@@ -3,7 +3,7 @@ import logo from "./../../assets/freshcart-logo.svg"
 import { useContext } from "react";
 import { tokenContext } from "../tokenContext/tokenContext";
 import style from "./navbar.module.css"
-import { cartContext } from "../CartContext/CartContext.JSX";
+import { cartContext } from "../CartContext/CartContext.jsx";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
