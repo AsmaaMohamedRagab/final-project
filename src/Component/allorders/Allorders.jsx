@@ -10,7 +10,7 @@ export default function Allorders() {
         setload(true)
         const { data } = await axios.get(`https://ecommerce.routemisr.com/api/v1/orders/user/${id}`)
         console.log(data);
-        setorder(data)
+        setorder(data.data)
         setload(false)
     }
     useEffect(() => { getallorders(); }, [])
@@ -20,7 +20,7 @@ export default function Allorders() {
     return (
         <section className="py-5 bg-secondary-subtle my-5">
             <div className="container">
-                {order ? order.map((order, idx) => <div key={idx} className="mb-5 pb-5 border-bottom border-secondary-subtle">
+                {order !=null ? order.map((order, idx) => <div key={idx} className="mb-5 pb-5 border-bottom border-secondary-subtle">
                     <div className="d-flex">
                         {order.cartItems.map((item, idx) => <div key={idx} className="w-25">
                             <img src={item.product.imageCover} alt="#" className="w-100 ps-3 py-3 pb-5" />
@@ -32,8 +32,7 @@ export default function Allorders() {
                         <h4 className="text-success">Payment Method Type : {order.paymentMethodType}</h4>
                     </div>
 
-                </div>)
-                    : <h2 className="text-center text-success my-5">No Last Orders</h2>}
+                </div>) : <h2 className="text-center text-success my-5">No Last Orders</h2>}
             </div>
         </section>
     )

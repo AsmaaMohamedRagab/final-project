@@ -12,7 +12,10 @@ export default function Home() {
     const [loader, setloader] = useState(false)
     const { data, isLoading, isFetching, error } = useQuery("product", getAllProduct)
     const { Addtocart } = useContext(cartContext)
-    const { AddProductToWishList, toggleWishList, IsInWishList } = useContext(washlistcontext)
+    const { AddProductToWishList, toggleWishList, IsInWishList,GetProductToWishList,washList,RemoveProductFromWishList,setwashList } = useContext(washlistcontext)
+    useEffect(function () {
+        GetProductToWishList();
+    }, []);
     async function getAllProduct() {
         return await axios.get("https://ecommerce.routemisr.com/api/v1/products")
     }
@@ -31,6 +34,14 @@ export default function Home() {
             setloader(false)
         }
 
+    }
+    function removeColor(id) {
+        if (washList.includes(id)) {
+            setwashList(oldValues => {
+                return oldValues.filter(item => item !== id)
+            })
+            RemoveProductFromWishList(id)
+        }
     }
     return (
         <>
@@ -53,10 +64,9 @@ export default function Home() {
                                             </div>
                                         </Link>
                                         <div onClick={() => {
-                                            AddProductToWishList(item.id)
-                                            toggleWishList()
+                                            washList.includes(item.id)?removeColor(item.id):AddProductToWishList(item.id)
                                         }
-                                        } className="d-flex justify-content-end py-3" ><i className={IsInWishList?"fa-solid fa-heart fa-lg text-danger":"fa-solid fa-heart fa-lg"}></i></div>
+                                        } className="d-flex justify-content-end py-3" ><i className={washList.includes(item.id) ? "fa-solid fa-heart fa-lg text-danger" : "fa-solid fa-heart fa-lg"}></i></div>
                                         <button onClick={() => addProduct(item.id)} className="w-100 bg-success text-white border-0 rounded-2 p-2"> Add to cart</button>
                                     </div >
                                 </div>

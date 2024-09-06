@@ -4,7 +4,7 @@ import toast from 'react-hot-toast'
 export const washlistcontext = createContext()
 const WashlistContextProvider = ({ children }) => {
     const [wishlistproduct, setwishlistproduct] = useState(null)
-    const [IsInWishList, setIsInWishList] = useState(false)
+    const [washList, setwashList] = useState([])
     async function AddProductToWishList(productid) {
         try {
             const { data } = await axios.post("https://ecommerce.routemisr.com/api/v1/wishlist",
@@ -23,9 +23,15 @@ const WashlistContextProvider = ({ children }) => {
             headers: { token: localStorage.getItem("tkn") }
         })
         setwishlistproduct(data.data)
+        data.data.map((item) => {
+            setwashList((prevItems) => [
+                ...prevItems,item.id
+              ])});
+
+            
     }
     async function RemoveProductFromWishList(productid) {
-        try{
+        try {
             const { data } = await axios.delete(`https://ecommerce.routemisr.com/api/v1/wishlist/${productid}`,
                 {
                     headers: {
@@ -37,19 +43,16 @@ const WashlistContextProvider = ({ children }) => {
             toast.success("Item has been deleted")
             return data
         }
-        catch{
+        catch {
             toast.error("error")
         }
-        
-    }
-    function toggleWishList(){
-        setIsInWishList(!IsInWishList)
+
     }
     useEffect(function () {
         GetProductToWishList()
     }, [])
     return (
-        <washlistcontext.Provider value={{ AddProductToWishList, wishlistproduct,RemoveProductFromWishList, toggleWishList,IsInWishList }}>
+        <washlistcontext.Provider value={{ AddProductToWishList, wishlistproduct, RemoveProductFromWishList, washList,GetProductToWishList,setwashList }}>
             {children}
         </washlistcontext.Provider>
 

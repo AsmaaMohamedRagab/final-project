@@ -22,9 +22,7 @@ export default function HomeSlider() {
                 <div className="w-75">
                     <Slider {...settings}>
                         <div>
-                            <img src={slider1} alt="#" className={style.height + 
-                                ' bg-danger '
-                            } />
+                            <img src={slider1} alt="#" className={style.height} />
                         </div>
                         <div>
                             <img src={slider2} alt="#" className={style.height} />
