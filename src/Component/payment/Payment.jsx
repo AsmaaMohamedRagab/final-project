@@ -43,7 +43,7 @@ export default function Payment() {
             }
         }
         try {
-            const { data } = await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartid}?url=http://localhost:5173`, x, {
+            const { data } = await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartid}?url=${window.location.hostname==='localhost'?'http://'+ window.location.hostname + ':5173':'http://'+ window.location.hostname}`, x, {
                 headers: {
                     token: localStorage.getItem("tkn")
                 }
