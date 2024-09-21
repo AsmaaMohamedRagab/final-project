@@ -39,8 +39,8 @@ export default function Category() {
                         {categories?.map(function (item, idx) {
                             return (
                                 <div onClick={function(){getSubCategory(item._id ,item.name)}} key={idx} className="col-md-4">
-                                    <div className={style.content}>
-                                        <img src={item.image} alt="categoryimage" className={style.cat} />
+                                    <div className={style.content + " w-100"}>
+                                        <img src={item.image} alt="categoryimage" className={style.cat + " w-100"} />
                                         <p className="text-center text-success py-3 fw-bolder fs-2 border border-bottom-0 border-start-0 border-end-0">{item.name}</p>
                                     </div>
                                 </div>

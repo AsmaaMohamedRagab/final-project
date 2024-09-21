@@ -22,9 +22,9 @@ export default function CategorySlider() {
             <Slider {...settings}>
                 {data?.data.data.map(function (item , idx) {
                     return (
-                        <div key={idx}>
+                        <div className="d-flex flex-column" key={idx}>
                             <img src={item.image} alt="#" className={style.category} />
-                            <h4 className="text-success text-center fs-5">{item.name}</h4>
+                            <h4 className="text-success text-center fs-6 w-100">{item.name}</h4>
                         </div>
                     )
                 })}

@@ -23,9 +23,9 @@ export default function Cart() {
                                 </div>
                             </div>
                             <div className="w-25 d-flex">
-                                <button onClick={() => updateCart(item.product.id, item.count + 1)} className="ms-3 bg-success border-success ">+</button>
+                                <button onClick={() => updateCart(item.product.id, item.count + 1)} className="ms-3 bg-success border-success px-2 ">+</button>
                                 <p className="ms-3 mt-3">{item.count}</p>
-                                <button disabled={item.count == 0 ? true : false} onClick={() => updateCart(item.product.id, item.count - 1)} className={`ms-3  bg-success border-success ${item.count == 0 ? "disabled opacity-50" : ""}`}>-</button>
+                                <button disabled={item.count == 0 ? true : false} onClick={() => updateCart(item.product.id, item.count - 1)} className={`ms-3  bg-success border-success px-2 ${item.count == 0 ? "disabled opacity-50" : ""}`}>-</button>
                             </div>
                         </div>
                     )} </> : <div className="text-center text-success py-5 fw-bolder "><h1>No Product To Display</h1></div>

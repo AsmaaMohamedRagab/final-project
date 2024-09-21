@@ -47,7 +47,7 @@ export default function Login() {
     return (
         <>
             <div className="w-50 mx-auto py-2">
-                <h3 className="mt-2">Register Now :</h3>
+                <h3 className="mt-2">Login Now :</h3>
                 <form onSubmit={formik.handleSubmit}>
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">Email:</label>

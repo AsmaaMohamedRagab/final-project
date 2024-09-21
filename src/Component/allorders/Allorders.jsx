@@ -10,7 +10,7 @@ export default function Allorders() {
         setload(true)
         const { data } = await axios.get(`https://ecommerce.routemisr.com/api/v1/orders/user/${id}`)
         console.log(data);
-        setorder(data.data)
+        setorder(data)
         setload(false)
     }
     useEffect(() => { getallorders(); }, [])
